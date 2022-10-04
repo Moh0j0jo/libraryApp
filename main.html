@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>library</title>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div class="headContainer">
+            <div class="header">
+                <h1>The Moho Jojo Library</h1>
+            </div>
+            <div class="logo">
+                <form action="Book" method="post">
+                    <div class="form-title">
+                        <label for="title">Book Title</label>
+                        <input id="title" placeholder="Title *" name="title" type="text" value="" pattern="^[^0-9]+$" size="30"
+                            maxlength="245" required>
+                    </div>
+                    <div class="form-autor">
+                        <label for="autor">Autor</label>
+                        <input id="autor" placeholder="Autor *" name="autor" type="text" value="" pattern="^[^0-9]+$" size="30"
+                            maxlength="245" required>
+                    </div>
+                    <div class="form-pages">
+                        <label for="pages">Pages</label>
+                        <input id="pages" placeholder="Pages *" name="pages" type="number" value="" size="30"
+                            maxlength="10000" required>
+                    </div>
+                </form>
+
+            </div>
+            <div class="navbar">
+                <button type="submit">A</button>
+                <button type="submit">B</button>
+                <button type="submit">C</button>
+            </div>
+        </div>
+
+        <div class="mainBody">
+            <h3>Current Books in the library.</h3>
+            <div class="books"></div>
+        </div>
+
+    </div>
+</body>
+
+<footer>Copyright by Mojojo</footer>
+
+
+
+
+<script src="script.js"></script>
+
+</html>
