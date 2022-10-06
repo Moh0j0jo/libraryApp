@@ -18,29 +18,35 @@
                 <h1>The Moho Jojo Library</h1>
             </div>
             <div class="logo">
-                <form action="Book" method="post">
-                    <div class="form-title">
-                        <label for="title">Book Title</label>
-                        <input id="title" placeholder="Title *" name="title" type="text" value="" pattern="^[^0-9]+$" size="30"
-                            maxlength="245" required>
-                    </div>
-                    <div class="form-autor">
-                        <label for="autor">Autor</label>
-                        <input id="autor" placeholder="Autor *" name="autor" type="text" value="" pattern="^[^0-9]+$" size="30"
-                            maxlength="245" required>
-                    </div>
-                    <div class="form-pages">
-                        <label for="pages">Pages</label>
-                        <input id="pages" placeholder="Pages *" name="pages" type="number" value="" size="30"
-                            maxlength="10000" required>
-                    </div>
-                </form>
+                <div id="add-book-form" style="display:none">
+                    <form id="add-book">
+                        <div class="form-title">
+                            <label for="title">Book Title</label>
+                            <input id="title" placeholder="What is the title?" name="title" type="text" value="" required>
+                        </div>
+                        <div class="form-author">
+                            <label for="author">Autor</label>
+                            <input id="author" placeholder="Who wrote it?" name="author" type="text" value="" required>
+                        </div>
+                        <div class="form-pages">
+                            <label for="pages">Pages</label>
+                            <input id="pages" placeholder="How many pages?" name="pages" type="text" value="" required>
+                        </div>
+                        <div class="form-read">
+                            <label for="read">Read</label>
+                            <input id="read" placeholder="Did you read it?" name="Read" type="text" value="" required>
+                        </div>
+
+                        <div class="buttons">
+                        </div>
+                    </form>
+                </div>
 
             </div>
             <div class="navbar">
-                <button type="submit">A</button>
-                <button type="submit">B</button>
-                <button type="submit">C</button>
+                <button class="add-book-button" id="add-book-button" >Add Book</button>
+                <button type="submit" class="submit-btn" id="submit-btn" type="submit">Submit</button>
+                <button type="reset" class="reset-btn" id="reset-btn">Reset Form</button>
             </div>
         </div>
 

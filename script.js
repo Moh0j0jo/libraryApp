@@ -10,22 +10,29 @@ function Book(title, author, pages, read){
 function addBookToLibrary(title, author, pages, read){
     let book = new Book(title, author, pages, read);
         myLibrary.push(book);
+        displayBooksOnPage();
 }
 
-function loopLibrary(){
-    //loop trough library and display to the page in cards.
-}
 
-function createCards(){
-    //create X peace of Cards to display X peace of books with info.
+function displayBooksOnPage(){
     const books = document.querySelector(".books");
 
-    //loop iver the library array and display to the cards
+    //Remove all prev displyd cards before loop over array again
+
+    const removeDivs = document.querySelectorAll(".card");
+    console.log("shw me the node count of current card divs....", removeDivs);
+    for (let i=0; i<removeDivs.length; i++){
+        removeDivs[i].remove();
+    }
+
+
+
+    //loop over the library array and display to the cards
     myLibrary.forEach(myLibrary =>{
         const card = document.createElement("div");
         card.classList.add("card");
         books.appendChild(card);
-        for ( let key in myLibrary){
+        for (let key in myLibrary){
             console.log(`${key}: ${myLibrary[key]}`);
             const para = document.createElement("p");
             para.textContent = (`${myLibrary[key]}`);
@@ -34,15 +41,43 @@ function createCards(){
     })
 }
 
-//use Dummy data for generating inputs
-addBookToLibrary("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read yet")
-addBookToLibrary("The Honulu", "by Reed Richards", "200 pages", "not read yet")
-addBookToLibrary("The Kutulu", "by Freddy Kruger", "134 pages", "not read yet")
-addBookToLibrary("The Abrakadabra", "by IDK Peter", "431 pages", "Read")
-addBookToLibrary("The Book", "by Jhon Doe", "123 pages", "not read yet")
-addBookToLibrary("The CookBook", "by Not Tolkien", "333 pages", "Read")
+function displayTheForm(){
+    document.getElementById("add-book-form").style.display = "";
+}
+
+function hideTheForm(){
+    document.getElementById("add-book-form").style.display = "none";
+}
+
+
+function resetTheForm(){
+    document.getElementById("add-book").reset();
+}
+
+function intakeFormData(){
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+    let read = document.getElementById("read").value;
+
+    addBookToLibrary(title, author, pages, read);
+
+    resetTheForm();
+}
+
+
+//Event listeners
+
+const addBookButton = document.querySelector(".add-book-button")
+    addBookButton.addEventListener("click",displayTheForm);
+    
+const submitButton = document.querySelector(".submit-btn")
+    submitButton.addEventListener("click",intakeFormData);
+
+const resetButton = document.querySelector(".reset-btn")
+    resetButton.addEventListener("click",resetTheForm);
+
+
 console.log("end of code array contents", myLibrary);
 
-/* const theHobbit = new Book("The Hobbit", "by J.R.R. Tolkien", "295 pages", "not read yet") */
-
-createCards();
+displayBooksOnPage();
