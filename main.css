@@ -1,91 +1,130 @@
 * {
     margin: 0;
     padding: 0;
-  }
-
-
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-
 }
 
 
-.container {
-    height: 500px;
-    width: 1fr;
+body{
+    max-width: 70%;
+    min-width: 40%;
+    max-height: 650px;
     margin: auto;
-    resize: both;
+}
+
+.container {
+    height: 650px;
+    /*resize: both;*/
     text-align: center;
     display: grid;
-    overflow:scroll;
+    overflow: scroll;
     gap: 10px;
-    grid-template-columns: repeat(2,auto-fit minmax(20px, 1fr));
+    grid-template-columns: repeat(2, auto-fit minmax(20px, 1fr));
     grid-template-rows: repeat(2, minmax(20px, 1fr));
 
 }
 
-.headContainer{
+.headContainer {
     display: grid;
     gap: 15px;
 
 }
 
-.header{
+.header {
     background-color: darkolivegreen;
     grid-column: 1/3;
 }
 
-.logo{
-    background-color: darkcyan;
-    grid-column: 1/1;
-}
 
-.navbar{
+
+.navbar {
     background-color: rgb(111, 142, 168);
     grid-column: 2/2;
 }
 
-.mainBody{
+.mainBody {
     grid-row: 2;
-    grid-column: 1/2  ;
-    background:darkgrey;
+    grid-column: 1/2;
+    background: darkgrey;
 }
 
-.mainBody>div{
+.mainBody>div {
     grid-column: 2/4;
 
     margin: auto;
 }
 
-.books{
+.books {
     display: grid;
-    overflow-y:hidden;
-    grid-template-columns: repeat(3,1fr);
+    overflow-y: hidden;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     align-items: center;
     align-items: center;
 }
 
-.card{
+.card {
     display: grid;
 
 }
-.card>p{
+
+.card>p {
     font-size: 1.2em;
 }
 
-button{
+button {
     margin: auto;
     padding: 1em;
 }
 
 footer {
     color: black;
-    font-size: 30px;
-    margin: 30px auto 5px;
+    font-size: 1em;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* FORM Related */
+
+.form-container{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    grid-column: 1/1;
+    background: bisque;
+    position: relative;
+    min-width: 200px;
+}
+
+#add-book-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.card{
+    display: flex;
+    flex-flow:column;
+}
+
+.card>p{
+    order: 1;
+}
+
+.card>button{
+    order: 2;
+    padding:0;
+    margin: 0;
+    height:2em;
+    width: 2em;
+    align-content: center;
+    align-self: center;
+    background-size: cover;
+    background-image: url(/libraryApp/bin.png);
+    background-repeat: no-repeat; 
+    cursor: pointer;
 }
