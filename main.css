@@ -7,20 +7,21 @@
 body{
     max-width: 70%;
     min-width: 40%;
-    max-height: 650px;
+    min-height: 200vh;
     margin: auto;
 }
 
 .container {
     height: 650px;
+    min-height: 400px;
     /*resize: both;*/
     text-align: center;
     display: grid;
-    overflow: scroll;
+    overflow: hidden;
     gap: 10px;
     grid-template-columns: repeat(2, auto-fit minmax(20px, 1fr));
-    grid-template-rows: repeat(2, minmax(20px, 1fr));
-
+    grid-template-rows: 1.5fr 0.1fr 1fr;
+    border-radius: 10px;
 }
 
 .headContainer {
@@ -42,14 +43,18 @@ body{
 }
 
 .mainBody {
-    grid-row: 2;
+    grid-row: 3/4;
     grid-column: 1/2;
     background: darkgrey;
 }
 
+.mainBody-title{
+    grid-row: 2;
+    width: 20px;
+}
+
 .mainBody>div {
     grid-column: 2/4;
-
     margin: auto;
 }
 

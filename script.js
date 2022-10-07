@@ -33,11 +33,10 @@ function displayBooksOnPage() {
         card.classList.add("card");
         books.appendChild(card);
 
-        // Create remove book button and add calss attribute for each array card
+        // Create remove book button and add class attribute for each array card
         const removeBookButton = document.createElement("button");
         removeBookButton.classList.add("remove-book-button");
         removeBookButton.textContent = "";
-   
         console.log("show me my current array object insude of foreach...", myLibrary);
 
         //Link the data attrivute of the remove button to the array and card
@@ -47,18 +46,18 @@ function displayBooksOnPage() {
         card.appendChild(removeBookButton);
 
         //Start event listener/remove array item from array and card from parent div via data link
-
         removeBookButton.addEventListener("click", removeBookFromLibrary);
-
+        
         function removeBookFromLibrary() {
             let retrieveBookToRemove = removeBookButton.dataset.linkedArray;
-            console.log("attemtping to remove array item via data attribute....", parseint(retrieveBookToRemove));
+            console.log("attemtping to remove array item via data attribute....", parseInt(retrieveBookToRemove));
             myLibrary.splice(parseInt(retrieveBookToRemove), 1);
             card.remove();
             displayBooksOnPage();
         }
 
-        //loop over the library array and display to the cards
+
+         //loop over the library array and display to the cards
         for (let key in myLibrarys) {
             console.log(`${key}: ${myLibrarys[key]}`);
             const para = document.createElement("p");
@@ -67,6 +66,8 @@ function displayBooksOnPage() {
         }
         })
  }
+
+
 
 function displayTheForm() {
     document.getElementById("add-book-form").style.display = "";
@@ -103,7 +104,6 @@ submitButton.addEventListener("click", intakeFormData);
 
 const resetButton = document.querySelector(".reset-btn")
 resetButton.addEventListener("click", resetTheForm);
-
 
 console.log("end of code array contents", myLibrary);
 
