@@ -1,74 +1,89 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
-
 body{
-    max-width: 70%;
-    min-width: 40%;
-    min-height: 200vh;
-    margin: auto;
+    background-color: black;
 }
 
 .container {
-    height: 650px;
-    min-height: 400px;
-    /*resize: both;*/
+    max-width: 700px;
+   
+    margin: auto;
     text-align: center;
     display: grid;
     overflow: hidden;
     gap: 10px;
     grid-template-columns: repeat(2, auto-fit minmax(20px, 1fr));
-    grid-template-rows: 1.5fr 0.1fr 1fr;
-    border-radius: 10px;
+    grid-template-rows: 0.2fr 1fr 0.1fr auto;
 }
 
-.headContainer {
-    display: grid;
-    gap: 15px;
-
-}
 
 .header {
     background-color: darkolivegreen;
-    grid-column: 1/3;
+    grid-column: 1/1;
+    border: 1px solid black;
 }
 
 
+.headContainer {
+    background-color: rgb(111, 142, 168);
+    min-width: 200px;
+    display: grid;
+    gap: 15px;
+    border: 1px solid black;
+
+}
+
+.form-container{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    grid-column: 1/1;
+    position: relative;
+    min-height: 160px;
+    min-width: 200px;
+    border: 1px solid black;
+    margin:5px;
+}
 
 .navbar {
-    background-color: rgb(111, 142, 168);
     grid-column: 2/2;
+    display: wrap;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    align-self: center;
 }
 
 .mainBody {
-    grid-row: 3/4;
+    overflow: scroll;
+    grid-row: 4/5;
     grid-column: 1/2;
     background: darkgrey;
 }
 
-.mainBody-title{
-    grid-row: 2;
-    width: 20px;
-}
-
-.mainBody>div {
-    grid-column: 2/4;
-    margin: auto;
-}
-
 .books {
+    min-height: calc(70vh - 70px);
+    overflow: auto;
     display: grid;
-    overflow-y: hidden;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    align-items: center;
-    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid grey;
+    background-color: skyblue;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
 }
 
 .card {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
 
 }
 
@@ -81,34 +96,27 @@ button {
     padding: 1em;
 }
 
-footer {
-    color: black;
-    font-size: 1em;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+.footer {
     text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: black;
 }
 
 /* FORM Related */
 
-.form-container{
-    display: flex;
-    overflow: hidden;
-    justify-content: center;
-    grid-column: 1/1;
-    background: bisque;
-    position: relative;
-    min-width: 200px;
-}
-
 #add-book-form{
+    font-weight: bolder;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
 
+input{
+    border-radius: 4px;
+    height: 1.5em;
+    width: 200px;
 }
 
 .card{
